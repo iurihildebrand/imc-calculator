@@ -6,12 +6,46 @@
     <title>Cálculo IMC</title>
     <style>
       body {
-        background-color: cadetblue;
+        background-color: #f0f4f8;
+        padding: 20px;
+      }
+      h1 {
+        color: #2a9d8f;
+        text-align: center;
+        font: normal 30pt;
+        font-family: "Segoe UI", "Arial Black", "Verdana", sans-serif;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.308);
+      }
+      #container {
+        color: #333333;
+        text-align: center;
+        font-size: large;
+        font-family: "Segoe UI", "Verdana", "Arial", sans-serif;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+      }
+      .container {
+        font-family: "Segoe UI", "Verdana", "Arial", sans-serif;
+        display: flex;
+        justify-content: center; /* Alinha itens no centro horizontal */
+        align-items: center; /* Alinha itens no centro vertical */
+        height: 120px;
+        background-color: #2a9d8f;
+        border-radius: 10px;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
       }
     </style>
   </head>
   <body>
-    <h1>Cálcule seu IMC agora</h1>
+    <h1>Descubra seu IMC de forma rápida e fácil!</h1>
+    <div id="container">
+      Quer saber se está dentro do peso ideal? Nosso site te ajuda com isso!
+      Basta informar sua altura, peso e sexo, e nós calculamos automaticamente o
+      seu índice de massa corporal. Além do resultado, você também recebe uma
+      interpretação personalizada, mostrando se seu IMC está dentro do
+      recomendado para sua saúde.
+      <br />
+      <p>💡 Simples, rápido e gratuito. Experimente agora mesmo!</p>
+    </div>
     <div class="container">
       <input type="text" name="name" id="name" placeholder="Digite seu nome" />
       <input type="number" name="age" id="age" placeholder="Digite sua idade" />
