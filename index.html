@@ -119,7 +119,7 @@
           resultado.innerHTML = `<div class="response"><p><strong>Por favor, preencha todos os campos corretamente.</strong></p></div>`;
           return;
         }
-        const height = heightCm / 100; // converte pra metros
+        const height = heightCm;
         const imc = weight / (height * height);
         const imcFormatado = imc.toFixed(2);
         let classificação = "";
@@ -131,7 +131,7 @@
           classificação = "sobrepeso";
         } else if (imc >= 30.0 && imc <= 39.9) {
           classificação = "obesidade";
-        } else {
+        } else if (imc >= 40.0) {
           classificação = "obesidade grave";
         }
 
