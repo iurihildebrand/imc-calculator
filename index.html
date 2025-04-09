@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo IMC</title>
+    <style>
+      body {
+        background-color: cadetblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cálcule seu IMC agora</h1>
+    <div class="container">
+      <input type="text" name="name" id="name" placeholder="Digite seu nome" />
+      <input type="number" name="age" id="age" placeholder="Digite sua idade" />
+      <input type="text" name="sex" id="sex" placeholder="Digite seu sexo" />
+      <input
+        type="number"
+        name="weight"
+        id="weight"
+        placeholder="Digite seu peso"
+      />
+      <input
+        type="number"
+        name="height"
+        id="height"
+        placeholder="Sua altura (ex:1.70)"
+      />
+      <input type="button" value="Calcular" onclick="Calcular()" />
+    </div>
+    <div id="res"></div>
+    <script>
+      function Calcular() {
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        const sex = document.getElementById("sex").value;
+        const weight = Number(document.getElementById("weight").value);
+        const heightCm = Number(document.getElementById("height").value);
+        const resultado = document.getElementById("res");
+        if (!name || !age || !sex || !weight || !heightCm) {
+          resultado.innerHTML = `<p><strong>Por favor, preencha todos os campos corretamente.</strong></p>`;
+          return;
+        }
+        const height = heightCm / 100; // converte pra metros
+        const imc = weight / (height * height);
+        const imcFormatado = imc.toFixed(2);
+        let classificação = "";
+        if (imc < 18.5) {
+          classificação = "magreza";
+        } else if (imc >= 18.5 && imc <= 24.9) {
+          classificação = "normal";
+        } else if (imc >= 25.0 && imc <= 29.9) {
+          classificação = "sobrepeso";
+        } else if (imc >= 30.0 && imc <= 39.9) {
+          classificação = "obesidade";
+        } else {
+          classificação = "obesidade grave";
+        }
+
+        resultado.innerHTML = `<p>Olá ${name}, você tem ${age} anos, é do sexo ${sex}, tem ${heightCm}cm de altura e ${weight}kg. Seu IMC é ${imcFormatado}, o que indica <strong>${classificação}</strong>.</p>`;
+      }
+    </script>
+  </body>
+</html>
